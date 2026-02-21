@@ -14,32 +14,32 @@ const category = [
     },
      {
         "id":2,
-        "name":"breakfast",
+        "name":"Breakfast",
         "image":breakfast,
     },
      {
         "id":3,
-        "name":"burger",
+        "name":"Burger",
         "image":burger,
     },
      {
         "id":4,
-        "name":"main",
+        "name":"Main",
         "image":main,
     },
      {
         "id":5,
-        "name":"pasta",
+        "name":"Pasta",
         "image":pasta,
     },
      {
         "id":6,
-        "name":"pizza",
+        "name":"Pizza",
         "image":pizza,
     },
      {
         "id":7,
-        "name":"soup",
+        "name":"Soup",
         "image":soup,
     },
     

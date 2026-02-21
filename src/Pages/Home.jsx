@@ -1,6 +1,8 @@
 import Nav from "../Components/Nav";
 
 import category from "../Category.jsx";
+import Card from "../Components/Card.jsx";
+import foodItems from "../food.jsx";
 
 const Home=()=>{
     return (
@@ -15,6 +17,13 @@ const Home=()=>{
                         </div>
                     ))
                 }
+            </div>
+            <div className="w-full flex flex-wrap gap-5 justify-center items-center px-5 py-4">
+                {foodItems.map((items)=>(
+                    // console.log(items);
+                    
+                    <Card  id={items.id} name={items.food_name} category={items.food_category} type={items.food_type} image={items.food_image} price={items.price} />
+                ))}
             </div>
         </div>
     )
