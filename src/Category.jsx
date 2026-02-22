@@ -6,7 +6,7 @@ import pasta from "./assets/icons/pasta.png"
 import pizza from "./assets/icons/pizza.png"
 import soup from "./assets/icons/soup.png"
 
-const category = [
+const foodCategory = [
     {
         "id":1,
         "name":"All",
@@ -45,4 +45,4 @@ const category = [
     
 ]
 
-export default category;
+export default foodCategory;

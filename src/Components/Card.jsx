@@ -8,12 +8,12 @@ import { GiChickenOven } from "react-icons/gi";
 const Card=({id,name,category,type,image,price})=>{
     return(
         
-        <div key={id} className="w-75 h-82 bg-white p-2 gap-3 flex flex-col cursor-pointer rounded-md
+        <div key={id} className="w-75 h-82 bg-white p-2 gap-3 flex flex-col rounded-md
         shadow-lg transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-100
        
         ">
             <div className="w-full h-[70%] overflow-hidden rounded-md">
-                <img src={image} alt="" className=" object-cover" />
+                <img src={image} alt={name} className="w-full h-full object-cover"/>
             </div>
             <div>
                 <p className="text-[20px] font-semibold text-gray-700">
@@ -25,7 +25,7 @@ const Card=({id,name,category,type,image,price})=>{
                     Rs {price}/-
                 </p>
                 <div className="flex justify-center items-center gap-2 text-gray-700">
-                    {type==="veg"?<GiFallingLeaf />:<GiChickenOven />}
+                    {type==="Veg"? <GiFallingLeaf />:<GiChickenOven />}
                     <span>{type}</span>
                 </div>
             
