@@ -4,7 +4,7 @@ import foodCategory from "../Category.jsx";
 import foodItems from "../food.jsx";
 import Card from "../Components/Card.jsx";
 import { useContext, useState } from "react";
-import { dataContext } from "../context/userContext.jsx";
+import { dataContext } from "../context/UserContext.jsx";
 import Cart from "../Components/Cart.jsx";
 
 const Home=()=>{

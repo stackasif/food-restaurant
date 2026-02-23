@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { IoFastFoodOutline } from "react-icons/io5";
 import { IoSearch } from "react-icons/io5";
 import { MdOutlineShoppingCart } from "react-icons/md";
-import { dataContext } from "../context/userContext";
+import { dataContext } from "../context/UserContext";
 import foodItems from "../food";
 
 

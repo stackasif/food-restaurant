@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { RxCross1 } from "react-icons/rx";
-import { dataContext } from "../context/userContext"
+import { dataContext } from "../context/UserContext"
 
     
 
