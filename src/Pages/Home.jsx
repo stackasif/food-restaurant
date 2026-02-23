@@ -3,10 +3,12 @@ import Nav from "../Components/Nav";
 import foodCategory from "../Category.jsx";
 import foodItems from "../food.jsx";
 import Card from "../Components/Card.jsx";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { dataContext } from "../context/userContext.jsx";
+import Cart from "../Components/Cart.jsx";
 
 const Home=()=>{
-    let [cate,setCate]=useState(foodItems)
+    let {cate,setCate,input}=useContext(dataContext)
 
     function filter(cateName) {
         // console.log(cateName);
@@ -26,7 +28,7 @@ const Home=()=>{
     return (
         <div className="bg-blue-100 w-full min-h-screen">
             <Nav />
-            <div className=" flex flex-wrap gap-5 justify-center items-center w-[full] m-2 md:m-4">
+            {!input?<div className=" flex flex-wrap gap-5 justify-center items-center w-[full] m-2 md:m-4">
                 {
                     foodCategory.map((elem)=>(
                         <div key={elem.id} className="bg-white text-gray-700 w-35 h-35 flex flex-col justify-center items-center p-3 cursor-pointer gap-3 rounded-lg shadow-lg transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-100 hover:bg-blue-100" onClick={()=>filter(elem.name)}>
@@ -35,7 +37,8 @@ const Home=()=>{
                         </div>
                     ))
                 }
-            </div>
+            </div>: null}
+            
 
             {/* // card Components   // */}
 
@@ -46,6 +49,8 @@ const Home=()=>{
                     <Card key={items.id}  id={items.id} name={items.food_name} category={items.food_category} type={items.food_type} image={items.food_image} price={items.price} />
                 ))}
             </div>
+
+            <Cart />
         </div>
     )
 }
