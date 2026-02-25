@@ -4,6 +4,7 @@ import { IoSearch } from "react-icons/io5";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { dataContext } from "../context/UserContext";
 import foodItems from "../food";
+import { useSelector } from "react-redux";
 
 
 const Nav=()=>{
@@ -17,6 +18,8 @@ useEffect(()=>{
     setCate(newItems)
 },[input])
 
+ let items=useSelector(state=>state.cart)
+    // console.log(items);
 
     return(
         <div className="w-full h-20 md:h-25 flex justify-between items-center px-4 md:px-8">
@@ -34,7 +37,7 @@ useEffect(()=>{
                 setShowCart(true)
             }>
                 <span className="absolute top-0 right-1 md:right-2 text-blue-500 font-semibold text-[12px] md:text-[16px]">
-                    0
+                    {items.length}
                 </span>
                 <MdOutlineShoppingCart className="text-blue-500 w-5 md:w-7.5 h-5 md:h-7.5"/>
             </div>

@@ -52,7 +52,7 @@ const Home=()=>{
             </div>
 
             <Cart />
-        <Card2 />
+       
 
         </div>
     )
