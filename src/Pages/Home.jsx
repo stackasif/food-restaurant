@@ -3,6 +3,7 @@ import Nav from "../Components/Nav";
 import foodCategory from "../Category.jsx";
 import foodItems from "../food.jsx";
 import Card from "../Components/Card.jsx";
+import Card2 from "../Components/Card2.jsx";
 import { useContext, useState } from "react";
 import { dataContext } from "../context/UserContext.jsx";
 import Cart from "../Components/Cart.jsx";
@@ -51,6 +52,8 @@ const Home=()=>{
             </div>
 
             <Cart />
+        <Card2 />
+
         </div>
     )
 }
