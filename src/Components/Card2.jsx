@@ -1,10 +1,11 @@
 
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { RemoveItems } from "../redux/CartSlice";
 
 const Card2=({id,name,image,price,qty})=>{
   let items= useSelector(state=>state.cart)
-   
+    let dispatch = useDispatch()
     
     return(
         <div className='w-full h-30 p-3 shadow-lg rounded-lg flex justify-between '>
@@ -26,7 +27,7 @@ const Card2=({id,name,image,price,qty})=>{
             {/* right */}
             <div className='flex flex-col justify-start items-end gap-4'>
                 <p className='font-semibold'>Rs {price}/-</p>
-                <RiDeleteBin6Line className='text-red-600 text-2xl cursor-pointer' />
+                <RiDeleteBin6Line className='text-red-600 text-2xl cursor-pointer' onClick={()=>dispatch(RemoveItems(id))} />
                 
             </div>
         </div>
