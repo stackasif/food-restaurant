@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 const Price=({subtotal,delivery,tax,total})=>{
     return(
         <>
@@ -15,11 +17,16 @@ const Price=({subtotal,delivery,tax,total})=>{
                 <span className="font-semibold">Rs {tax}/-</span>
             </div>
         </div>
-        <div>
+        <div className="my-3">
              <div className="flex justify-between items-center px-4">
                 <p className="text-lg font-bold text-gray-600">Total :</p>
                 <span className="font-bold">Rs {total}/-</span>
             </div>
+        </div>
+        <div className="w-[full] bg-zinc-800 p-2 rounded-md text-[15px] font-semibold cursor-pointer text-white hover:bg-zinc-900 transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-100 hover:text-white" onClick={()=>toast.success("Order Placed")}>
+            <h2 className="text-center">
+                Place Order
+            </h2>
         </div>
         </>
     )

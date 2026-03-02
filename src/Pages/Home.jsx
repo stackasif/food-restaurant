@@ -44,11 +44,16 @@ const Home=()=>{
             {/* // card Components   // */}
 
             <div className="w-full flex flex-wrap gap-5 justify-center items-center px-5 py-4">
-                {cate.map((items)=>(
+                {cate.length>1?cate.map((items)=>(
                     // console.log(items);
                     
                     <Card key={items.id}  id={items.id} name={items.food_name} category={items.food_category} type={items.food_type} image={items.food_image} price={items.price} />
-                ))}
+                )):<p className="text-lg font-bold">No dish found</p>}
+
+                 {/* {cate.map((items)=>( console.log(items); */}
+                    
+                {/* //     <Card key={items.id}  id={items.id} name={items.food_name} category={items.food_category} type={items.food_type} image={items.food_image} price={items.price} /> */}
+                {/* // ))} */}
             </div>
 
             <Cart />

@@ -12,7 +12,7 @@ const Cart=()=>{
      let items=useSelector(state=>state.cart)
 
      let subTotal = items.reduce((total,item)=>
-         total+item.price,0
+         total+item.qty*item.price,0
      )
      let delivery= 20
      let tax=subTotal*18/100;
@@ -25,7 +25,7 @@ const Cart=()=>{
      
 //    console.log(items);
     return(
-        <div className={`md:w-[40vw] p-4 w-full h-full bg-blue-100 fixed top-0 right-0 transition-all duration-500 ${showCart?"translate-x-0":"translate-x-full"}`}>
+        <div className={`md:w-[40vw] overflow-auto p-4 w-full h-full bg-blue-100 fixed top-0 right-0 transition-all duration-500 ${showCart?"translate-x-0":"translate-x-full"}`}>
             <header className="w-full flex justify-between items-center p-5">
                 <p className="text-lg font-semibold ">
                     Order Items
@@ -40,8 +40,10 @@ const Cart=()=>{
                     ))
                 }
             </div>
-
-            <Price subtotal={subTotal} delivery={delivery} tax={tax} total={total}/>
+                {
+                    items.length>0?<Price subtotal={subTotal} delivery={delivery} tax={tax} total={total}/>:<div><p className="text-center text-lg p-4 font-semibold text-gray-600">Empty Cart</p></div>
+                }
+            
 
         </div>
     )

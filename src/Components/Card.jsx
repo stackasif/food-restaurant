@@ -2,6 +2,7 @@ import { GiFallingLeaf } from "react-icons/gi";
 import { GiChickenOven } from "react-icons/gi";
 import { useDispatch } from "react-redux";
 import { AddItems } from "../redux/CartSlice";
+import { toast } from "react-toastify";
 
 
 // import image1 from "../assets/images/pizza.avif"
@@ -32,7 +33,8 @@ const Card=({id,name,category,type,image,price})=>{
                 </div>
             
             </div>
-            <button className="w-full bg-zinc-800 p-2 rounded-md text-[15px] font-semibold cursor-pointer text-white hover:bg-zinc-900 transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-100 hover:text-white" onClick={()=>dispatch(AddItems({id:id,name:name,image:image,price:price,qty:1}))}>Add to dish</button>
+            <button className="w-full bg-zinc-800 p-2 rounded-md text-[15px] font-semibold cursor-pointer text-white hover:bg-zinc-900 transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-100 hover:text-white" onClick={()=>{dispatch(AddItems({id:id,name:name,image:image,price:price,qty:1}));
+            toast.success("Item Added")}}>Add to dish</button>
         </div>
 
            
